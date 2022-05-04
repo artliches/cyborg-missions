@@ -1,0 +1,26 @@
+.mission-generator {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, min-content);
+    grid-gap: 1rem;
+    place-content: center;
+
+    .title {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .highlight {
+        background-color: black;
+        color: white;
+        padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+    }
+    
+    .clickable {
+        text-transform: uppercase;
+        cursor: pointer;
+        border-bottom: 1px solid red;
+        padding: 1px;
+    }
+}
