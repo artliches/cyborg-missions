@@ -1,28 +1,36 @@
-<span class="mission-generator">
-  <div class="title">// <span class="highlight">MISSION</span> <span class="clickable" (click)="createMission()">GENERATOR</span></div>
-  <div>
-    <span class="highlight">THE PC'S ARE CONTACTED BY A </span>
-    <span class=clickable (click)="reRoll('contact')">{{missionObj.contact.text}}</span>
+<span class="main-grid">
+  <span class="mission-generator">
+    <div class="title">// <span class="highlight">MISSION</span> <span class="clickable" (click)="createMission()">.GENERATOR</span></div>
+    <div>
+      <span class="highlight">THE PC'S ARE CONTACTED BY A </span>
+      <span class=clickable (click)="reRoll('contact')">{{missionObj.contact.text}}</span>
+    </div>
+    <div>
+      <span class="highlight">ACTING ON BEHALF OF </span>
+      <span class=clickable (click)="reRoll('patron')">{{missionObj.patron.text}}</span>
+    </div>
+    <div>
+      <span class="highlight">WHO PROMISES </span>
+      <span class=clickable (click)="reRoll('reward')">{{missionObj.reward.text}}</span></div>
+    <div>
+      <span class="highlight">IF THEY </span><span class=clickable (click)="reRoll('job')">{{missionObj.job.text}}</span>&nbsp;<span class=clickable (click)="reRoll('target')">{{missionObj.target.text}}</span></div>
+    <div>
+      <span class="highlight">THE TARGET CAN BE FOUND IN A </span>
+      <span class=clickable (click)="reRoll('location')" [innerHtml]="missionObj.location.text | safeHtml"></span></div>
+    <div>
+      <span class="highlight">SOMEWHERE IN </span>
+      <span class=clickable (click)="reRoll('geo')" [innerHtml]="missionObj.geo.text | safeHtml"></span></div>
+    <div>
+      <span class="highlight">IT'S PROTECTED BY </span>
+      <span class=clickable (click)="reRoll('security')">{{missionObj.security.text}}</span></div>
+    <div>
+      <span class="highlight">BUT SOMETHING COMPLICATES THE JOB: </span>
+      <span class=clickable (click)="reRoll('complications')">{{missionObj.complications.text | uppercase}}</span></div>
+  </span>
+  
+  <div class="footer">
+    <span>// MISSION.GENERATOR is an independent production by <a class="clickable" href="https://twitter.com/codeLiches" target="_blank">@codeLiches</a> and is not affiliated with Stockholm Kartell. It is published under the CY_BORG Third Party License.</span>
+    <span>CY_BORG IS ©2022 STOCKHOLM KARTELL.</span>
   </div>
-  <div>
-    <span class="highlight">ACTING ON BEHALF OF </span>
-    <span class=clickable (click)="reRoll('patron')">{{missionObj.patron.text}}</span>
-  </div>
-  <div>
-    <span class="highlight">WHO PROMISES </span>
-    <span class=clickable (click)="reRoll('reward')">{{missionObj.reward.text}}</span></div>
-  <div>
-    <span class="highlight">IF THEY </span><span class=clickable (click)="reRoll('job')">{{missionObj.job.text}}</span>&nbsp;<span class=clickable (click)="reRoll('target')">{{missionObj.target.text}}</span></div>
-  <div>
-    <span class="highlight">THE TARGET CAN BE FOUND IN A </span>
-    <span class=clickable (click)="reRoll('location')" [innerHtml]="missionObj.location.text | safeHtml"></span></div>
-  <div>
-    <span class="highlight">SOMEWHERE IN </span>
-    <span class=clickable (click)="reRoll('geo')" [innerHtml]="missionObj.geo.text | safeHtml"></span></div>
-  <div>
-    <span class="highlight">IT'S PROTECTED BY </span>
-    <span class=clickable (click)="reRoll('security')">{{missionObj.security.text}}</span></div>
-  <div>
-    <span class="highlight">BUT SOMETHING COMPLICATES THE JOB: </span>
-    <span class=clickable (click)="reRoll('complications')">{{missionObj.complications.text | uppercase}}</span></div>
 </span>
+
