@@ -3,30 +3,50 @@
     <div class="title">// <span class="highlight">MISSION</span> <span class="clickable" (click)="createMission()">.GENERATOR</span></div>
     <div>
       <span class="highlight">THE PC'S ARE CONTACTED BY A </span>
-      <span class=clickable (click)="reRoll('contact')">{{missionObj.contact.text}}</span>
+      <span class=clickable (click)="createSingleMissionData('contact')">{{missionObj.contact.text}}</span>
     </div>
     <div>
       <span class="highlight">ACTING ON BEHALF OF </span>
-      <span class=clickable (click)="reRoll('patron')">{{missionObj.patron.text}}</span>
+      <span class=clickable (click)="createSingleMissionData('patron')">{{missionObj.patron.text}}</span>
     </div>
     <div>
       <span class="highlight">WHO PROMISES </span>
-      <span class=clickable (click)="reRoll('reward')">{{missionObj.reward.text}}</span></div>
+      <span class=clickable (click)="createSingleMissionData('reward')">{{missionObj.reward.text}}</span></div>
     <div>
-      <span class="highlight">IF THEY </span><span class=clickable (click)="reRoll('job')">{{missionObj.job.text}}</span>&nbsp;<span class=clickable (click)="reRoll('target')">{{missionObj.target.text}}</span></div>
+      <span class="highlight">IF THEY </span><span class=clickable (click)="createSingleMissionData('job')">{{missionObj.job.text}}</span>&nbsp;<span class=clickable (click)="createSingleMissionData('target')">{{missionObj.target.text}}</span></div>
     <div>
       <span class="highlight">THE TARGET CAN BE FOUND IN A </span>
-      <span class=clickable (click)="reRoll('location')" [innerHtml]="missionObj.location.text | safeHtml"></span></div>
+      <span class=clickable (click)="createSingleMissionData('location')" [innerHtml]="missionObj.location.text | safeHtml"></span>
+    </div>
     <div>
-      <span class="highlight">SOMEWHERE IN </span>
-      <span class=clickable (click)="reRoll('geo')" [innerHtml]="missionObj.geo.text | safeHtml"></span></div>
+      <span class="highlight">WHAT MAKES THIS PLACE DISTINCT? </span>
+      <span class=clickable (click)="createSingleMissionData('location_distinct')" [innerHtml]="missionObj.location_distinct.text | safeHtml"></span>
+    </div>
     <div>
-      <span class="highlight">IT'S PROTECTED BY </span>
-      <span class=clickable (click)="reRoll('security')">{{missionObj.security.text}}</span></div>
+      <span class="highlight">WHAT IS HIDDEN ABOUT THIS PLACE? </span>
+      <span class=clickable (click)="createSingleMissionData('location_hidden')" [innerHtml]="missionObj.location_hidden.text | safeHtml"></span>
+    </div>
+    <div>
+      <span class="highlight">WHAT DANGER LURKS HERE? </span>
+      <span class=clickable (click)="createSingleMissionData('location_danger')" [innerHtml]="missionObj.location_danger.text | safeHtml"></span>
+    </div>
+    <div>
+      <span class="highlight">IT'S LOCATED SOMEWHERE IN </span>
+      <span class=clickable (click)="createSingleMissionData('geo')" [innerHtml]="missionObj.geo.text | safeHtml"></span>
+    </div>
+    <div>
+      <span class="highlight">PROTECTED BY </span>
+      <span class=clickable (click)="createSingleMissionData('security')">{{missionObj.security.text}}</span>
+    </div>
     <div>
       <span class="highlight">BUT SOMETHING COMPLICATES THE JOB: </span>
-      <span class=clickable (click)="reRoll('complications')">{{missionObj.complications.text | uppercase}}</span></div>
+      <span class=clickable (click)="createSingleMissionData('complications')">{{missionObj.complications.text | uppercase}}</span>
+    </div>
   </span>
+
+  <div class="print">
+    <span class="highlight no-print" (click)="print()">PRINT/DOWNLOAD</span>
+  </div>
   
   <div class="footer">
     <span>// MISSION.GENERATOR is an independent production by <a class="clickable" href="https://twitter.com/codeLiches" target="_blank">@codeLiches</a> and is not affiliated with Stockholm Kartell. It is published under the CY_BORG Third Party License.</span>

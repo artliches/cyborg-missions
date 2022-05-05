@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RandomRollerService } from './services/random-roller.service';
-import { COMPLICATIONS, CONTACT, GEO, JOB, LOCATION, PATRON, REWARD, SECURITY, TARGET } from './services/random-tables.constants';
+import { COMPLICATIONS, CONTACT, GEO, JOB, LOCATION, LOCATION_FEATURES, PATRON, REWARD, SECURITY, TARGET } from './services/random-tables.constants';
 
 @Component({
   selector: 'app-root',
@@ -33,6 +33,18 @@ export class AppComponent implements OnInit {
       text: '',
       prev: 0
     },
+    location_distinct: {
+      text: '',
+      prev: 0
+    },
+    location_hidden: {
+      text: '',
+      prev: 0
+    },
+    location_danger: {
+      text: '',
+      prev: 0
+    },
     geo: {
       text: '',
       prev: 0
@@ -54,6 +66,9 @@ export class AppComponent implements OnInit {
     job: JOB,
     target: TARGET,
     location: LOCATION,
+    location_distinct: LOCATION_FEATURES.distinct,
+    location_hidden: LOCATION_FEATURES.hidden,
+    location_danger: LOCATION_FEATURES.danger,
     geo: GEO,
     security: SECURITY,
     complications: COMPLICATIONS,
@@ -70,21 +85,13 @@ export class AppComponent implements OnInit {
 
   createMission(): void {
     for (const [key, value] of Object.entries(this.missionObj)) {
-      let currRoll = 0;
-      currRoll = this.randomNumber.getRandomNumber(0, 19);
-      let text = this.missionData[key][currRoll]
-
-      if (key === 'reward' && currRoll > 11) {
-        text = this.randomNumber.rollRandomDie(text);
-      }
-
-      value.text = text;
-      value.prev = currRoll;
+      this.createSingleMissionData(key);
     }
   }
 
-  reRoll(dataToRoll: string): void {
-    const currRoll = this.randomNumber.getRandomNumber(0, 19, this.missionObj[dataToRoll].prev)
+  createSingleMissionData(dataToRoll: string): void {
+    const dataSize = this.missionData[dataToRoll].length - 1;
+    const currRoll = this.randomNumber.getRandomNumber(0, dataSize, this.missionObj[dataToRoll].prev);
     let newText = this.missionData[dataToRoll][currRoll];
     this.missionObj[dataToRoll].prev = currRoll;
 
@@ -92,5 +99,9 @@ export class AppComponent implements OnInit {
       newText = this.randomNumber.rollRandomDie(newText);
     }
     this.missionObj[dataToRoll].text = newText;
+  }
+
+  print(): void {
+    window.print();
   }
 }

@@ -136,6 +136,45 @@ export const LOCATION = [
     `<strong>Construction site</strong> or beneath a <strong>replica pyramid</strong>`,
 ];
 
+export const LOCATION_FEATURES = {
+    distinct: [
+        `Under renovation; paint buckets, scaffolding, etc. spread around.`,
+        `Holoprojections of historical art pieces in most rooms.`,
+        `Anti-Nano propaganda everywhere.`,
+        `Every room is a separate floor. Two elevators service every second floor only.`,
+        `Parts have been taken over by squatters engaged in a slow but deadly conflict with the owners.`,
+        `Vertigo-inducing animated wallpapers.`,
+        `Traces of a recent gunfight with bullet holes and soot from small fires still on the walls.`,
+        `Way cleaner and more luxurious than expected.`,
+        `Surprisingly rough and dirty.`,
+        `Due to a hostage situation, SecOps have surrounded the building next door.`,
+    ],
+    hidden: [
+        `Maze-like crawlspaces hidden in walls, floors, ceiling.`,
+        `Hidden cameras in many rooms, planted there by someone else.`,
+        `A secret room used as <em>a reaperdoc clinic</em>.`,
+        `Paper-thin internal walls.`,
+        `A small data node that leads into the low-res virtual hellscape of a dying world. A terrible monster guards a large ¤ stash.`,
+        `Sentient maintenance system can be bribed to work with the party.`,
+        `Hidden conspiracy board detailing plot behind the latest miserable headline.`,
+        `In a gamma-ray protected vault sits an artifact of terrible and weird powers.`,
+        `What look like mannequins are knock-off skulkers with sharp claws.`,
+        `A cassette with a custom App. Has a tracker that will ping the App author as soon as it's used.`,
+    ],
+    danger: [
+        `Large valuable art piece covered in Nano-spreading dust.`,
+        `A glitching Ghost is stuck in a loop somewhere, attacking anyone who enters its vicinity.`,
+        `Locked maintenance door leads to a temple of a small but violent cult.`,
+        `Tech use has a 50% chance of triggering an electrical fire.`,
+        `Three vials of Red Pain marked as Red-juice left on a table.`,
+        `An out-of-place laser turret fires at everyone without the password.`,
+        `A Cy-raging menace locked inside a padded room.`,
+        `A canister with a nonhuman creature that warps reality around it if disturbed.`,
+        `Mold in the walls releases sight-blocking spores when bullets hit them.`,
+        `An EMP booby trap renders all electronics unusable for 10 minutes if triggered.`,
+    ]
+};
+
 export const GEO = [
     `<strong>Central</strong>: the Arcs`,
     `<strong>Central</strong>: North`,
