@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1651759550786,
+  "timestamp": 1651782142260,
   "index": "/cyborg-missions/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "/cyborg-missions/favicon.ico",
         "/cyborg-missions/index.html",
-        "/cyborg-missions/main.43ad6714f7fb804d02ca.js",
+        "/cyborg-missions/main.8e9f178695901929cb82.js",
         "/cyborg-missions/manifest.webmanifest",
         "/cyborg-missions/polyfills.c7c856d96e667cac9a4a.js",
         "/cyborg-missions/runtime.7b63b9fd40098a2e8207.js",
-        "/cyborg-missions/styles.4b9a59c55f877d868bf3.css"
+        "/cyborg-missions/styles.c9a96a465e99669a2f57.css"
       ],
       "patterns": []
     },
@@ -50,12 +50,12 @@
     "/cyborg-missions/assets/icons/favicon-32x32.png": "6c00900eb084658cde710893e8387013a7104185",
     "/cyborg-missions/assets/icons/favicon.ico": "f870029e5206d0df8c7b901a1c4d127f6f57adad",
     "/cyborg-missions/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/cyborg-missions/index.html": "c4edd5aad6348a9aad3255f0d5d6119f7f75b2b7",
-    "/cyborg-missions/main.43ad6714f7fb804d02ca.js": "6ca477bf25b8f2d7636335dc65d8e2de64ea5dd3",
+    "/cyborg-missions/index.html": "7a09ec22fcd0e34c0532ec565e7340214c44b5f3",
+    "/cyborg-missions/main.8e9f178695901929cb82.js": "5ea461220a7e6c66b0621fe344271846a61b569f",
     "/cyborg-missions/manifest.webmanifest": "c898ccf375ef297f3a452699357bf6356105ed6f",
     "/cyborg-missions/polyfills.c7c856d96e667cac9a4a.js": "19e9b48300c9ec3f7d55fe82b257722e04313acd",
     "/cyborg-missions/runtime.7b63b9fd40098a2e8207.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/cyborg-missions/styles.4b9a59c55f877d868bf3.css": "fc5a5d2f90a141b3a5d372433f1f837ba23fd238"
+    "/cyborg-missions/styles.c9a96a465e99669a2f57.css": "a80edeffa21960250ee269803d882295660f7c14"
   },
   "navigationUrls": [
     {
