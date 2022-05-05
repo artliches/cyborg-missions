@@ -4,53 +4,65 @@
     'mork': currentTheme === 'mork',
     'terminal': currentTheme === 'terminal',
     'dark': currentTheme === 'dark',
-    'malfunction': currentTheme === 'malfunction'
+    'malfunction': currentTheme === 'malfunction',
+    'bi': currentTheme === 'bi',
+    'blues': currentTheme === 'blues',
+    'slasher': currentTheme === 'slasher',
+    'forsaken': currentTheme === 'forsaken',
+    'gameboy': currentTheme === 'gameboy'
   }"
 >
+  <div *ngIf="showThemes" class="themeChooser no-print">
+    <span class="clickable {{theme}}" (click)="chooseTheme(theme)" *ngFor="let theme of themes">{{theme}}</span>
+  </div>
+
   <span class="mission-generator">
     <div class="title">
-      <span>// <span (click)="cycleTheme()" class="highlight clickable">MISSION</span> <span class="clickable" (click)="createMission()">.GENERATOR</span></span>
+      <span>// <span (click)="showThemes = !showThemes" class="highlight clickable">MISSION</span> <span class="clickable" (click)="createMission()">.GENERATOR</span></span>
     </div>
-    <div>
+    <div class="contact">
       <span class="highlight">THE PC'S ARE CONTACTED BY A </span>
-      <span class=clickable (click)="createSingleMissionData('contact')">{{missionObj.contact.text}}</span>
+      <span class="clickable" (click)="createSingleMissionData('contact')">{{missionObj.contact.text}}</span>
     </div>
-    <div>
+    <div class="patron">
       <span class="highlight">ACTING ON BEHALF OF </span>
-      <span class=clickable (click)="createSingleMissionData('patron')">{{missionObj.patron.text}}</span>
+      <span class="clickable" (click)="createSingleMissionData('patron')">{{missionObj.patron.text}}</span>
     </div>
-    <div>
+    <div class="reward">
       <span class="highlight">WHO PROMISES </span>
-      <span class=clickable (click)="createSingleMissionData('reward')">{{missionObj.reward.text}}</span></div>
-    <div>
-      <span class="highlight">IF THEY </span><span class=clickable (click)="createSingleMissionData('job')">{{missionObj.job.text}}</span>&nbsp;<span class=clickable (click)="createSingleMissionData('target')">{{missionObj.target.text}}</span></div>
-    <div>
+      <span class="clickable" (click)="createSingleMissionData('reward')">{{missionObj.reward.text}}</span></div>
+    <div class="job">
+      <span class="highlight section-title">IF THEY </span>
+        <span class="clickable descrip" (click)="createSingleMissionData('job')">{{missionObj.job.text}}</span>
+        &nbsp;<span class="clickable target" (click)="createSingleMissionData('target')">{{missionObj.target.text}}</span>
+    </div>
+    <div class="location">
       <span class="highlight">THE TARGET CAN BE FOUND IN A </span>
-      <span class=clickable (click)="createSingleMissionData('location')" [innerHtml]="missionObj.location.text | safeHtml"></span>
+      <span class="clickable" (click)="createSingleMissionData('location')" [innerHtml]="missionObj.location.text | safeHtml"></span>
     </div>
-    <div>
+    <div class="distinct">
       <span class="highlight">WHAT MAKES THIS PLACE DISTINCT? </span>
-      <span class=clickable (click)="createSingleMissionData('location_distinct')" [innerHtml]="missionObj.location_distinct.text | safeHtml"></span>
+      <span class="clickable" (click)="createSingleMissionData('location_distinct')" [innerHtml]="missionObj.location_distinct.text | safeHtml"></span>
     </div>
-    <div>
+    <div class="hidden">
       <span class="highlight">WHAT IS HIDDEN ABOUT THIS PLACE? </span>
-      <span class=clickable (click)="createSingleMissionData('location_hidden')" [innerHtml]="missionObj.location_hidden.text | safeHtml"></span>
+      <span class="clickable" (click)="createSingleMissionData('location_hidden')" [innerHtml]="missionObj.location_hidden.text | safeHtml"></span>
     </div>
-    <div>
+    <div class="danger">
       <span class="highlight">WHAT DANGER LURKS HERE? </span>
-      <span class=clickable (click)="createSingleMissionData('location_danger')" [innerHtml]="missionObj.location_danger.text | safeHtml"></span>
+      <span class="clickable" (click)="createSingleMissionData('location_danger')" [innerHtml]="missionObj.location_danger.text | safeHtml"></span>
     </div>
-    <div>
-      <span class="highlight">IT'S LOCATED SOMEWHERE IN </span>
-      <span class=clickable (click)="createSingleMissionData('geo')" [innerHtml]="missionObj.geo.text | safeHtml"></span>
+    <div class="geo">
+      <span class="highlight">SOMEWHERE IN </span>
+      <span class="clickable" (click)="createSingleMissionData('geo')" [innerHtml]="missionObj.geo.text | safeHtml"></span>
     </div>
-    <div>
+    <div class="security">
       <span class="highlight">PROTECTED BY </span>
-      <span class=clickable (click)="createSingleMissionData('security')">{{missionObj.security.text}}</span>
+      <span class="clickable" (click)="createSingleMissionData('security')">{{missionObj.security.text}}</span>
     </div>
-    <div>
+    <div class="comp">
       <span class="highlight">BUT SOMETHING COMPLICATES THE JOB: </span>
-      <span class=clickable (click)="createSingleMissionData('complications')">{{missionObj.complications.text | uppercase}}</span>
+      <span class="clickable" (click)="createSingleMissionData('complications')">{{missionObj.complications.text | uppercase}}</span>
     </div>
   </span>
 

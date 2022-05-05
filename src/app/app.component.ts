@@ -11,10 +11,13 @@ export class AppComponent implements OnInit {
   currentTheme = '';
   themes = [
     'void',
+    'dark',
     'mork',
     'terminal',
-    'dark',
-    'malfunction'
+    'malfunction',
+    'bi',
+    'blues',
+    'slasher',
   ];
 
   missionObj: {[key: string]: {text: string, prev: number}} = {
@@ -83,6 +86,8 @@ export class AppComponent implements OnInit {
     complications: COMPLICATIONS,
   };
 
+  showThemes = false;
+
   constructor(
     private randomNumber: RandomRollerService
   ) {}
@@ -113,10 +118,8 @@ export class AppComponent implements OnInit {
     this.missionObj[dataToRoll].text = newText;
   }
 
-  cycleTheme(): void {
-    const nextIndex = this.themes.indexOf(this.currentTheme) + 1 === this.themes.length ?
-      0 : this.themes.indexOf(this.currentTheme) + 1;
-    this.currentTheme = this.themes[nextIndex];
+  chooseTheme(chosenTheme: string): void {
+    this.currentTheme = chosenTheme;
     localStorage.setItem('theme', this.currentTheme);
   }
 

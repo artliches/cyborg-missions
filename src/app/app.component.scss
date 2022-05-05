@@ -4,14 +4,32 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: min-content auto min-content;
-    height: 100vh;
+    height: 98vh;
     width: 100%;
     grid-gap: 0.5rem;
+
+    .themeChooser {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(10, min-content);
+        grid-gap: 0.5rem;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        
+        .clickable {
+            cursor: pointer;
+            border-bottom: none;
+        }
+    }
 
     .print {
         place-self: end center;
         user-select: none;
         cursor: pointer;
+        .clickable {
+            border-bottom: none;
+        }
     }
 
     .footer {
@@ -21,13 +39,10 @@
         span {
             place-self: center;
         }
-        // grid-template-columns: repeat(2, auto);
-        // span:nth-child(1) {
-        //     place-self: center start;
-        // }
-        // span:nth-child(2) {
-        //     place-self: center end;
-        // }
+
+        .clickable {
+            border-bottom: none;
+        }
     }
 
     .highlight {
@@ -50,6 +65,7 @@
         display: grid;
         place-self: center;
         border: none;
+        margin-bottom: 1rem;
     }
     
     .clickable {
@@ -59,8 +75,162 @@
     }
 }
 
+@media only screen and (min-width: 768px) {
+    .main-grid {
+        .themeChooser {
+            top: 7%;
+            right: 32%;
+        }
+
+        .mission-generator {
+            $areas: contact, patron, reward, job, location, distinct, hidden, danger, geo, security, comp;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(6, min-content);
+            grid-template-areas:
+                "title      title       title"
+                "contact    patron      reward"
+                "job          job        job"
+                "location     geo         security"
+                "distinct   hidden      danger"
+                "comp       comp        comp";
+
+            .title {
+                grid-area: title;
+                span {
+                    font-size: 3rem;
+                    span {
+                        font-size: 3rem;
+                    }
+                }
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                span.clickable {
+                    font-size: 1.8rem;
+                }
+                @each $area in $areas {
+                    &.#{$area} {
+                        grid-area: #{$area};
+                    }
+                    &.job {
+                        place-self: center;
+                        width: 50%;
+                        display: grid;
+                        grid-template-columns: 20% 80%;
+                        grid-template-rows: repeat(2, min-content);
+                        grid-template-areas: 
+                            "title      title"
+                            "descrip    target";
+                        .section-title {
+                            grid-area: title;
+                        }
+                        .descrip {
+                            grid-area: descrip;
+                        }
+                        .target {
+                            grid-area: target;
+                        }
+                    }
+                    &.comp {
+                        place-self: center;
+                        width: 55%;
+                    }
+                }
+            }
+        }
+        .footer {
+            grid-template-columns: repeat(2, auto);
+            span:nth-child(1) {
+                place-self: center start;
+            }
+            span:nth-child(2) {
+                place-self: center end;
+            }
+        }
+        .print {
+            font-size: 1.2rem;
+        }
+    }
+
+}
+
 @media print {
    .no-print {
        display: none;
-   } 
+   }
+
+   .main-grid {
+    div.themeChooser.no-print {
+        display: none;
+    }
+    .mission-generator {
+        $areas: contact, patron, reward, job, location, distinct, hidden, danger, geo, security, comp;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(6, min-content);
+        grid-template-areas:
+            "title      title       title"
+            "contact    patron      reward"
+            "job          job        job"
+            "location     geo         security"
+            "distinct   hidden      danger"
+            "comp       comp        comp";
+
+        .title {
+            grid-area: title;
+            span {
+                font-size: 3rem;
+                span {
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            span.clickable {
+                font-size: 1.6rem;
+            }
+            @each $area in $areas {
+                &.#{$area} {
+                    grid-area: #{$area};
+                }
+                &.job {
+                    place-self: center;
+                    width: 50%;
+                    display: grid;
+                    grid-template-columns: 20% 80%;
+                    grid-template-rows: repeat(2, min-content);
+                    grid-template-areas: 
+                        "title      title"
+                        "descrip    target";
+                    .section-title {
+                        grid-area: title;
+                    }
+                    .descrip {
+                        grid-area: descrip;
+                    }
+                    .target {
+                        grid-area: target;
+                    }
+                }
+                &.comp {
+                    place-self: center;
+                    width: 55%;
+                }
+            }
+        }
+    }
+    .footer {
+        grid-template-columns: repeat(2, auto);
+        span:nth-child(1) {
+            place-self: center start;
+        }
+        span:nth-child(2) {
+            place-self: center end;
+        }
+    }
+}
 }

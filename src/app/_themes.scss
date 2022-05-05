@@ -13,7 +13,7 @@
     }
 
     .clickable {
-        border-bottom: 1px solid $underLine-color;
+        border-bottom: 2px solid $underLine-color;
         &:hover {
             background-color: $underLine-color;
             color: $highlight-text-color;
@@ -41,7 +41,7 @@
         color: $highlight-text-color;
     }
     .clickable {
-        border-bottom: 1px solid $underLine-color;
+        border-bottom: 2px solid $underLine-color;
         &:hover {
             background-color: $underLine-color;
             color: $highlight-color;
@@ -70,7 +70,7 @@
         color: $highlight-text-color;
     }
     .clickable {
-        border-bottom: 1px solid $underLine-color;
+        border-bottom: 2px solid $underLine-color;
         &:hover {
             background-color: $hover-background;
             color: $hover-color;
@@ -99,7 +99,7 @@
         color: $highlight-text-color;
     }
     .clickable {
-        border-bottom: 1px solid $underLine-color;
+        border-bottom: 2px solid $underLine-color;
         &:hover {
             background-color: $hover-background;
             color: $hover-color;
@@ -128,7 +128,7 @@
         color: $highlight-text-color;
     }
     .clickable {
-        border-bottom: 1px solid $underLine-color;
+        border-bottom: 2px solid $underLine-color;
         &:hover {
             background-color: $hover-background;
             color: $hover-color;
@@ -141,6 +141,147 @@
     }
 }
 
-$cyber-border: cyan;
-$cyber-text: rgb(255,0,128);
-$cyber-bg: rgb(51, 32, 42);
+.bi {
+    $background-color: cyan;
+    $text-color: rgb(255,0,128);
+    $highlight-color: rgb(212, 4, 212);
+    $highlight-text-color: white;
+    $underLine-color: rgb(212, 4, 212);
+    $hover-background: rgb(255,0,128);
+    $hover-color: white;
+    background-color: $background-color;
+    color: $text-color;
+
+    .highlight {
+        background-color: $highlight-color;
+        color: $highlight-text-color;
+    }
+    .clickable {
+        border-bottom: 2px solid $underLine-color;
+        &:hover {
+            background-color: $hover-background;
+            color: $hover-color;
+        }
+    }
+    .title {
+        .highlight.clickable {
+            border: none;
+        }
+    }
+}
+
+.blues {
+    $background-color: white;
+    $text-color: blue;
+    $highlight-color: blue;
+    $highlight-text-color: white;
+    $underLine-color: blue;
+    $hover-background: black;
+    $hover-color: white;
+    background-color: $background-color;
+    color: $text-color;
+
+    .highlight {
+        background-color: $highlight-color;
+        color: $highlight-text-color;
+    }
+    .clickable {
+        border-bottom: 2px solid $underLine-color;
+        &:hover {
+            background-color: $hover-background;
+            color: $hover-color;
+        }
+    }
+    .title {
+        .highlight.clickable {
+            border: none;
+        }
+    }
+}
+
+.slasher {
+    $background-color: #f0f;
+    $text-color: white;
+    $highlight-color: gold;
+    $highlight-text-color: black;
+    $underLine-color: gold;
+    $hover-background: cyan;
+    $hover-color: black;
+    background-color: $background-color;
+    color: $text-color;
+
+    .highlight {
+        background-color: $highlight-color;
+        color: $highlight-text-color;
+    }
+    .clickable {
+        border-bottom: 2px solid $underLine-color;
+        &:hover {
+            background-color: $hover-background;
+            color: $hover-color;
+        }
+    }
+    .title {
+        .highlight.clickable {
+            border: none;
+        }
+    }
+}
+
+.forsaken {
+    $background-color: black;
+    $text-color: red;
+    $highlight-color: red;
+    $highlight-text-color: white;
+    $underLine-color: red;
+    $hover-background: white;
+    $hover-color: red;
+    background-color: $background-color;
+    color: $text-color;
+
+    .highlight {
+        background-color: $highlight-color;
+        color: $highlight-text-color;
+    }
+    .clickable {
+        border-bottom: 2px solid $underLine-color;
+        &:hover {
+            background-color: $hover-background;
+            color: $hover-color;
+        }
+    }
+    .title {
+        .highlight.clickable {
+            border: none;
+        }
+    }
+}
+
+.gameboy {
+    $background-color: rgb(0, 53, 0);
+    $text-color: lightgreen;
+    $highlight-color: green;
+    $highlight-text-color: lightgreen;
+    $underLine-color: green;
+    $hover-background: black;
+    $hover-color: green;
+    background-color: $background-color;
+    color: $text-color;
+
+    .highlight {
+        background-color: $highlight-color;
+        color: $highlight-text-color;
+    }
+    .clickable {
+        border-bottom: 2px solid $underLine-color;
+        &:hover {
+            background-color: $hover-background;
+            color: $hover-color;
+        }
+    }
+    .title {
+        .highlight.clickable {
+            border: none;
+        }
+    }
+}
