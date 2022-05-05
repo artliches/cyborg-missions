@@ -8,21 +8,6 @@
     width: 100%;
     grid-gap: 0.5rem;
 
-    .themeChooser {
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: repeat(10, min-content);
-        grid-gap: 0.5rem;
-        position: absolute;
-        top: 5%;
-        right: 5%;
-        
-        .clickable {
-            cursor: pointer;
-            border-bottom: none;
-        }
-    }
-
     .print {
         place-self: end center;
         user-select: none;
@@ -54,7 +39,7 @@
     padding: 0rem 1rem 1rem 1rem;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(9, min-content);
+    grid-template-rows: min-content 0.5rem repeat(9, min-content);
     grid-gap: 1rem;
     place-content: center;
     font-size: 1.2rem;
@@ -65,7 +50,20 @@
         display: grid;
         place-self: center;
         border: none;
-        margin-bottom: 1rem;
+    }
+
+    div.themeChooser {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(10, min-content);
+        grid-gap: 0.5rem;
+        font-size: 1rem;
+        place-self: center;
+        
+        .clickable {
+            cursor: pointer;
+            border-bottom: none;
+        }
     }
     
     .clickable {
@@ -83,11 +81,12 @@
         }
 
         .mission-generator {
-            $areas: contact, patron, reward, job, location, distinct, hidden, danger, geo, security, comp;
+            $areas: theme, contact, patron, reward, job, location, distinct, hidden, danger, geo, security, comp;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(6, min-content);
+            grid-template-rows: min-content 1rem repeat(5, min-content);
             grid-template-areas:
                 "title      title       title"
+                "theme      theme       theme"
                 "contact    patron      reward"
                 "job          job        job"
                 "location     geo         security"
@@ -101,6 +100,18 @@
                     span {
                         font-size: 3rem;
                     }
+                }
+            }
+
+            .themeChooser {
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: repeat(10, min-content);
+                grid-gap: 0.5rem;
+                
+                .clickable {
+                    cursor: pointer;
+                    border-bottom: none;
                 }
             }
 
@@ -165,6 +176,7 @@
     div.themeChooser.no-print {
         display: none;
     }
+
     .mission-generator {
         $areas: contact, patron, reward, job, location, distinct, hidden, danger, geo, security, comp;
         grid-template-columns: repeat(3, 1fr);

@@ -12,13 +12,14 @@
     'gameboy': currentTheme === 'gameboy'
   }"
 >
-  <div *ngIf="showThemes" class="themeChooser no-print">
-    <span class="clickable {{theme}}" (click)="chooseTheme(theme)" *ngFor="let theme of themes">{{theme}}</span>
-  </div>
-
   <span class="mission-generator">
     <div class="title">
       <span>// <span (click)="showThemes = !showThemes" class="highlight clickable">MISSION</span> <span class="clickable" (click)="createMission()">.GENERATOR</span></span>
+    </div>
+    <div class="theme">
+      <div *ngIf="showThemes" class="themeChooser no-print">
+        <span class="clickable {{theme}}" (click)="chooseTheme(theme)" *ngFor="let theme of themes">{{theme}}</span>
+      </div>
     </div>
     <div class="contact">
       <span class="highlight">THE PC'S ARE CONTACTED BY A </span>
