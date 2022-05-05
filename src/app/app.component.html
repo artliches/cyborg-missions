@@ -1,6 +1,16 @@
-<span class="main-grid">
+<span class="main-grid"
+  [ngClass]="{
+    'void': currentTheme === 'void',
+    'mork': currentTheme === 'mork',
+    'terminal': currentTheme === 'terminal',
+    'dark': currentTheme === 'dark',
+    'malfunction': currentTheme === 'malfunction'
+  }"
+>
   <span class="mission-generator">
-    <div class="title">// <span class="highlight">MISSION</span> <span class="clickable" (click)="createMission()">.GENERATOR</span></div>
+    <div class="title">
+      <span>// <span (click)="cycleTheme()" class="highlight clickable">MISSION</span> <span class="clickable" (click)="createMission()">.GENERATOR</span></span>
+    </div>
     <div>
       <span class="highlight">THE PC'S ARE CONTACTED BY A </span>
       <span class=clickable (click)="createSingleMissionData('contact')">{{missionObj.contact.text}}</span>
@@ -45,11 +55,11 @@
   </span>
 
   <div class="print">
-    <span class="highlight no-print" (click)="print()">PRINT/DOWNLOAD</span>
+    <span class="highlight clickable no-print" (click)="print()">PRINT/DOWNLOAD</span>
   </div>
   
   <div class="footer">
-    <span>// MISSION.GENERATOR is an independent production by <a class="clickable" href="https://twitter.com/codeLiches" target="_blank">@codeLiches</a> and is not affiliated with Stockholm Kartell. It is published under the CY_BORG Third Party License.</span>
+    <span>// MISSION.GENERATOR is an independent production by <a class="clickable highlight" href="https://twitter.com/codeLiches" target="_blank">@codeLiches</a> and is not affiliated with Stockholm Kartell. It is published under the CY_BORG Third Party License.</span>
     <span>CY_BORG IS ©2022 STOCKHOLM KARTELL.</span>
   </div>
 </span>

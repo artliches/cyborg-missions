@@ -38,6 +38,6 @@ export class RandomRollerService {
         const numOfDie = textToParse.slice(0, dLocation) ? textToParse.slice(0, dLocation) : 1;
         const rolledNum = this.getSumOfMulipleRolls(Number(numOfDie), Number(dieSize)) * multiplier;
 
-        return `${rolledNum}K¤`;
+        return `${rolledNum}000¤`;
     }
 }

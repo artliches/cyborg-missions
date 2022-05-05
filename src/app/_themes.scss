@@ -1,0 +1,146 @@
+.void {
+    $background-color: white;
+    $text-color: black;
+    $highlight-color: black;
+    $highlight-text-color: white;
+    $underLine-color: red;
+    background-color: $background-color;
+    color: $text-color;
+
+    .highlight {
+        background-color: $highlight-color;
+        color: $highlight-text-color;
+    }
+
+    .clickable {
+        border-bottom: 1px solid $underLine-color;
+        &:hover {
+            background-color: $underLine-color;
+            color: $highlight-text-color;
+        }
+    }
+
+    .title {
+        .highlight.clickable {
+            border: none;
+        }
+    }
+}
+
+.mork {
+    $background-color: gold;
+    $text-color: black;
+    $highlight-color: white;
+    $highlight-text-color: black;
+    $underLine-color: black;
+    background-color: $background-color;
+    color: $text-color;
+
+    .highlight {
+        background-color: $highlight-color;
+        color: $highlight-text-color;
+    }
+    .clickable {
+        border-bottom: 1px solid $underLine-color;
+        &:hover {
+            background-color: $underLine-color;
+            color: $highlight-color;
+        }
+    }
+    .title {
+        .highlight.clickable {
+            border: none;
+        }
+    }
+}
+
+.terminal {
+    $background-color: rgb(51, 32, 42);
+    $text-color: rgb(138, 234, 146);
+    $highlight-color: #b0e7b4;
+    $highlight-text-color: black;
+    $underLine-color: #b0e7b4;
+    $hover-background: rgb(138, 234, 146);
+    $hover-color: rgb(51, 32, 42);
+    background-color: $background-color;
+    color: $text-color;
+
+    .highlight {
+        background-color: $highlight-color;
+        color: $highlight-text-color;
+    }
+    .clickable {
+        border-bottom: 1px solid $underLine-color;
+        &:hover {
+            background-color: $hover-background;
+            color: $hover-color;
+        }
+    }
+    .title {
+        .highlight.clickable {
+            border: none;
+        }
+    }
+}
+
+.dark {
+    $background-color: black;
+    $text-color: white;
+    $highlight-color: lightgray;
+    $highlight-text-color: black;
+    $underLine-color: lightgray;
+    $hover-background: white;
+    $hover-color: black;
+    background-color: $background-color;
+    color: $text-color;
+
+    .highlight {
+        background-color: $highlight-color;
+        color: $highlight-text-color;
+    }
+    .clickable {
+        border-bottom: 1px solid $underLine-color;
+        &:hover {
+            background-color: $hover-background;
+            color: $hover-color;
+        }
+    }
+    .title {
+        .highlight.clickable {
+            border: none;
+        }
+    }
+}
+
+.malfunction {
+    $background-color: rgb(51, 32, 42);
+    $text-color: rgb(255,0,128);
+    $highlight-color: cyan;
+    $highlight-text-color: black;
+    $underLine-color: cyan;
+    $hover-background: rgb(255,0,128);
+    $hover-color: white;
+    background-color: $background-color;
+    color: $text-color;
+
+    .highlight {
+        background-color: $highlight-color;
+        color: $highlight-text-color;
+    }
+    .clickable {
+        border-bottom: 1px solid $underLine-color;
+        &:hover {
+            background-color: $hover-background;
+            color: $hover-color;
+        }
+    }
+    .title {
+        .highlight.clickable {
+            border: none;
+        }
+    }
+}
+
+$cyber-border: cyan;
+$cyber-text: rgb(255,0,128);
+$cyber-bg: rgb(51, 32, 42);

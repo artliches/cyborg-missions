@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'app/themes';
+
 @font-face {
     font-family: 'VT323';
+    // /cyborg-missions required when deploying to get fonts to properly load
     src: url(/cyborg-missions/assets/fonts/VT323-Regular.ttf) format("truetype");
     // src: url(/assets/fonts/VT323-Regular.ttf) format("truetype");
     font-weight:400;
@@ -8,5 +11,6 @@
 
 
 body {
+    background-color: black;
     font-family: 'VT323', sans-serif;
 }

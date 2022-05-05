@@ -8,6 +8,15 @@ import { COMPLICATIONS, CONTACT, GEO, JOB, LOCATION, LOCATION_FEATURES, PATRON, 
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  currentTheme = '';
+  themes = [
+    'void',
+    'mork',
+    'terminal',
+    'dark',
+    'malfunction'
+  ];
+
   missionObj: {[key: string]: {text: string, prev: number}} = {
     contact: {
       text: '',
@@ -80,6 +89,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
       this.createMission();
+      this.currentTheme = localStorage.getItem('theme') ?? 'void';
+      localStorage.setItem('theme', this.currentTheme);
   }
 
 
@@ -99,6 +110,13 @@ export class AppComponent implements OnInit {
       newText = this.randomNumber.rollRandomDie(newText);
     }
     this.missionObj[dataToRoll].text = newText;
+  }
+
+  cycleTheme(): void {
+    const nextIndex = this.themes.indexOf(this.currentTheme) + 1 === this.themes.length ?
+      0 : this.themes.indexOf(this.currentTheme) + 1;
+    this.currentTheme = this.themes[nextIndex];
+    localStorage.setItem('theme', this.currentTheme);
   }
 
   print(): void {
