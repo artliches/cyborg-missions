@@ -89,7 +89,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
       this.createMission();
-      this.currentTheme = localStorage.getItem('theme') ?? 'void';
+      const storedTheme = localStorage.getItem('theme');
+      this.currentTheme = storedTheme ? storedTheme : 'void';
       localStorage.setItem('theme', this.currentTheme);
   }
 
