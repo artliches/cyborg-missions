@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1651757619933,
+  "timestamp": 1651759235947,
   "index": "/cyborg-missions/index.html",
   "assetGroups": [
     {
@@ -30,14 +30,12 @@
       },
       "urls": [
         "/cyborg-missions/assets/fonts/VT323-Regular.ttf",
-        "/cyborg-missions/assets/icons/icon-128x128.png",
-        "/cyborg-missions/assets/icons/icon-144x144.png",
-        "/cyborg-missions/assets/icons/icon-152x152.png",
-        "/cyborg-missions/assets/icons/icon-192x192.png",
-        "/cyborg-missions/assets/icons/icon-384x384.png",
-        "/cyborg-missions/assets/icons/icon-512x512.png",
-        "/cyborg-missions/assets/icons/icon-72x72.png",
-        "/cyborg-missions/assets/icons/icon-96x96.png"
+        "/cyborg-missions/assets/icons/android-chrome-192x192.png",
+        "/cyborg-missions/assets/icons/android-chrome-512x512.png",
+        "/cyborg-missions/assets/icons/apple-touch-icon.png",
+        "/cyborg-missions/assets/icons/favicon-16x16.png",
+        "/cyborg-missions/assets/icons/favicon-32x32.png",
+        "/cyborg-missions/assets/icons/favicon.ico"
       ],
       "patterns": []
     }
@@ -45,18 +43,16 @@
   "dataGroups": [],
   "hashTable": {
     "/cyborg-missions/assets/fonts/VT323-Regular.ttf": "a4cbe89ec9e1bf6ddd26c53c118f587f1b465f25",
-    "/cyborg-missions/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "/cyborg-missions/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "/cyborg-missions/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "/cyborg-missions/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "/cyborg-missions/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/cyborg-missions/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/cyborg-missions/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "/cyborg-missions/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/cyborg-missions/assets/icons/android-chrome-192x192.png": "7fd3cb7bf57bc77dcb7630d4554bc591c64fd60f",
+    "/cyborg-missions/assets/icons/android-chrome-512x512.png": "a1305eee2990deaa6ebe8eef4256925e0a03aacf",
+    "/cyborg-missions/assets/icons/apple-touch-icon.png": "52924af7c48856d1dfab528c83e9e0df0f1f2a4d",
+    "/cyborg-missions/assets/icons/favicon-16x16.png": "e3fb6f0befcc9b314232008fc0bcbb2f1f6049a7",
+    "/cyborg-missions/assets/icons/favicon-32x32.png": "6c00900eb084658cde710893e8387013a7104185",
+    "/cyborg-missions/assets/icons/favicon.ico": "f870029e5206d0df8c7b901a1c4d127f6f57adad",
     "/cyborg-missions/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/cyborg-missions/index.html": "145ae7faecd782a052dc5ee7da946fb967ccc774",
+    "/cyborg-missions/index.html": "c4edd5aad6348a9aad3255f0d5d6119f7f75b2b7",
     "/cyborg-missions/main.43ad6714f7fb804d02ca.js": "6ca477bf25b8f2d7636335dc65d8e2de64ea5dd3",
-    "/cyborg-missions/manifest.webmanifest": "6b139760b351e29108e2e34c9585839139e88ccb",
+    "/cyborg-missions/manifest.webmanifest": "c898ccf375ef297f3a452699357bf6356105ed6f",
     "/cyborg-missions/polyfills.c7c856d96e667cac9a4a.js": "19e9b48300c9ec3f7d55fe82b257722e04313acd",
     "/cyborg-missions/runtime.7b63b9fd40098a2e8207.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/cyborg-missions/styles.4b9a59c55f877d868bf3.css": "fc5a5d2f90a141b3a5d372433f1f837ba23fd238"
