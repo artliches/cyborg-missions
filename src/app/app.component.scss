@@ -57,7 +57,7 @@
         grid-template-rows: 1fr;
         grid-template-columns: repeat(10, min-content);
         grid-gap: 0.5rem;
-        font-size: 1rem;
+        font-size: 0.8rem;
         place-self: center;
         
         .clickable {
@@ -72,7 +72,16 @@
         padding: 1px;
     }
 }
+// large mobile
+@media only screen and (min-width: 425px) {
+    .mission-generator {
+        div.themeChooser {
+            font-size: 1rem;
+        }
+    }
+}
 
+// tablet and above
 @media only screen and (min-width: 768px) {
     .main-grid {
         .themeChooser {
