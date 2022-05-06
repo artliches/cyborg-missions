@@ -8,7 +8,7 @@ import { COMPLICATIONS, CONTACT, GEO, JOB, LOCATION, LOCATION_FEATURES, PATRON, 
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  currentTheme = '';
+  currentTheme = 'void';
   themes = [
     'void',
     'dark',
@@ -98,7 +98,6 @@ export class AppComponent implements OnInit {
       this.currentTheme = storedTheme ? storedTheme : 'void';
       localStorage.setItem('theme', this.currentTheme);
   }
-
 
   createMission(): void {
     for (const [key, value] of Object.entries(this.missionObj)) {
