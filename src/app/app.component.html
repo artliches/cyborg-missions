@@ -69,6 +69,7 @@
 
   <div class="print">
     <span class="highlight clickable no-print" (click)="print()">PRINT/DOWNLOAD</span>
+    <span class="highlight clickable no-print" *ngIf="thirdPartyContentLoaded" (click)="enableThirdParty(true)">{{thirdPartyText | uppercase}}</span>
   </div>
   
   <div class="footer">

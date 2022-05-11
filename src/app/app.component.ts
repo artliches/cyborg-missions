@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RandomRollerService } from './services/random-roller.service';
 import { COMPLICATIONS, CONTACT, GEO, JOB, LOCATION, LOCATION_FEATURES, PATRON, REWARD, SECURITY, TARGET } from './services/random-tables.constants';
+import { ThridPartyService } from './services/third-party.service';
 
 @Component({
   selector: 'app-root',
@@ -87,16 +88,36 @@ export class AppComponent implements OnInit {
   };
 
   showThemes = false;
+  showThirdParty = false;
+  thirdPartyObj: any;
+  thirdPartyContentLoaded = false;
+  thirdPartyText = 'Enable Nano-infected Mode';
 
   constructor(
+    private thirdParty: ThridPartyService,
     private randomNumber: RandomRollerService
   ) {}
 
   ngOnInit(): void {
+      this.thirdParty.getData().subscribe(
+        result => {
+          const enableThirdParty = localStorage.getItem('cyborg_thirdPartyFlag');
+          this.thirdPartyObj = result;
+          this.showThirdParty = enableThirdParty === 'true' ? true : false;
+          if (this.showThirdParty) {
+            this.enableThirdParty(false);
+          }
+        },
+        error => console.error(error),
+        () => this.thirdPartyContentLoaded = true
+      );
+
       this.createMission();
-      const storedTheme = localStorage.getItem('theme');
+
+      const storedTheme = localStorage.getItem('cyborg_theme');
       this.currentTheme = storedTheme ? storedTheme : this.currentTheme;
-      localStorage.setItem('theme', this.currentTheme);
+
+      localStorage.setItem('cyborg_theme', this.currentTheme);
   }
 
   createMission(): void {
@@ -111,7 +132,7 @@ export class AppComponent implements OnInit {
     let newText = this.missionData[dataToRoll][currRoll];
     this.missionObj[dataToRoll].prev = currRoll;
 
-    if (dataToRoll === 'reward' && this.missionObj.reward.prev > 11) {
+    if (dataToRoll === 'reward' && newText.includes('¤')) {
       newText = this.randomNumber.rollRandomDie(newText);
     }
     this.missionObj[dataToRoll].text = newText;
@@ -119,7 +140,31 @@ export class AppComponent implements OnInit {
 
   chooseTheme(chosenTheme: string): void {
     this.currentTheme = chosenTheme;
-    localStorage.setItem('theme', this.currentTheme);
+    localStorage.setItem('cyborg_theme', this.currentTheme);
+  }
+
+  enableThirdParty(toggleButton: boolean): void {
+    if (this.showThirdParty) {
+      this.thirdPartyObj.forEach((dataObj: any) => {
+        // loops through each array
+        // feed third party data into missionData
+        for (const [key, value] of Object.entries(this.missionObj)) {
+          const dataToPush = dataObj[key.toUpperCase()];
+          if (dataToPush) {
+            this.missionData[key].push(dataObj[key.toUpperCase()]);
+          }
+        }
+      });
+    } else {
+      for (const [key] of Object.entries(this.missionObj)) {
+        this.missionData[key].splice(20);
+      }
+    }
+    if (toggleButton) {
+      this.showThirdParty = !this.showThirdParty;
+      localStorage.setItem('cyborg_thirdPartyFlag', this.showThirdParty.toString());
+    }
+    this.thirdPartyText = this.showThirdParty ? 'Disable Nano-infected Mode' : 'Enable Nano-infected Mode';
   }
 
   print(): void {
