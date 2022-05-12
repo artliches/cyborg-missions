@@ -10,8 +10,8 @@
 
     .print {
         display: grid;
-        grid-template-columns: min-content;
-        grid-template-rows: repeat(2, min-content);
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(2, auto);
         grid-gap: 0.5rem;
         place-self: end center;
         user-select: none;
@@ -174,9 +174,6 @@
             }
         }
         .print {
-            display: grid;
-            grid-template-columns: repeat(2, auto);
-            grid-template-rows: 1fr;
             font-size: 1.2rem;
         }
     }
